@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.result {
+    border-width: 2px;
+    border-style: solid;
+    border-color: aqua;
+    width:30vw;
+
+}
+
+.parent {
+    position: absolute;
+    margin-left: 500px;
+    margin-top: -10vh;
+}
+
+h1 {
+    display: inline-block
+}
+
+
+.box {
+    width: 50px;
+    height: 50px;
+    border-width: 2px;
+    position: absolute;
+    border-color: aqua;
+    border-radius: 50%;
+    background-color: aqua;
+}
+
+.arena {
+    width: 100vw;
+    height: 90vh;
+    margin-top: 10vh;
+    position: relative;
+}

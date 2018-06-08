@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="./index.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .result {
+            border-width: 2px;
+            border-style: solid;
+            border-color: aqua;
+            width: 30vw;
+
+        }
+
+        .parent {
+            position: absolute;
+            margin-left: 500px;
+            margin-top: -10vh;
+        }
+
+        h1 {
+            display: inline-block
+        }
+
+
+        .box {
+            width: 50px;
+            height: 50px;
+            border-width: 2px;
+            position: absolute;
+            border-color: aqua;
+            border-radius: 50%;
+            background-color: aqua;
+        }
+
+        .arena {
+            width: 100vw;
+            height: 90vh;
+            margin-top: 10vh;
+            position: relative;
+        }
+
+    </style>
+</head>
+
+<body>
+    <script>
+        //        function end() { // alert('Total Score :' + document.getElementsByClassName('total')[0].innerHTML); // }
+
+        var result = 0;
+        var t;
+        var name;
+        function move() {
+                var box = document.getElementsByClassName('box')[0];
+                var leftPos = Math.round(1000 * Math.random());
+                var topPos = Math.round(500 * Math.random());
+
+                box.style.left = leftPos + "px";
+                box.style.top = topPos + "px";
+            }
+
+        window.onload = function() {
+            do{
+                name = prompt("Enter your name");
+            }while(name=='');
+            
+            document.getElementById("name").innerHTML = name + ' your total score : ';
+            t = setInterval(move, 1000);         
+        }
+        function pointFun() {
+            result++;
+            var res = document.getElementsByClassName('total')[0];
+            res.innerHTML = result;
+
+            var r = Math.round(255 * Math.random());
+            var g = Math.round(255 * Math.random());
+            var b = Math.round(255 * Math.random());
+            var box = document.getElementsByClassName('box')[0];
+            box.style.backgroundColor = 'rgb(' + r + ',' + g + ',' + b + ')';
+            t.clearInterval();
+           move();
+           t.setInterval(move, 1000);
+        }
+
+    </script>
+</body>
+<div class="parent">
+    <div class="result">
+        <h1 id="name">XYZ your total points : </h1>
+        <h1 class="total">0</h1>
+    </div>
+</div>
+<div class="arena">
+    <div class="box" onclick="pointFun();">
+    </div>
+</div>
+
+</html>
